@@ -35,11 +35,16 @@ public class TaskManager {
     }
 
     private void addTask() {
-        System.out.print("Enter task description: ");
-        String description = scanner.nextLine();
-        tasks.add(new Task(description));
-        System.out.println("Task added.");
-    }
+    System.out.print("Enter task description: ");
+    String description = scanner.nextLine();
+
+    System.out.print("Enter priority (1: High, 2: Medium, 3: Low): ");
+    int priority = scanner.nextInt();
+    scanner.nextLine(); // bỏ qua newline
+
+    tasks.add(new Task(description, priority));
+}
+
     private void viewTasks() {
     if (tasks.isEmpty()) {
         System.out.println("No tasks available.");
